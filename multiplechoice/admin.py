@@ -17,11 +17,5 @@ class QuestionAdmin(admin.ModelAdmin):
     def exam__teacher(self, obj):
         return obj.exam.teacher
 
-
-#class ExamAdmin(admin.ModelAdmin):
-    #list_display = ('title', 'teacher', 'date', 'updated_on')
-
-
-#admin.site.register(Exam, ExamAdmin)
 admin.site.register(Question, QuestionAdmin)
 

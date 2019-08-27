@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     USER_TYPES = (
-        ('S', 'Student'),
-        ('T', 'Teacher'),
+        ('Student', 'Student'),
+        ('Teacher', 'Teacher'),
     )
-    type = models.CharField(choices=USER_TYPES, max_length=4)
+    type = models.CharField(choices=USER_TYPES, max_length=4, default='Student')

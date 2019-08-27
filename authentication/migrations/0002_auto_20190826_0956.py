@@ -9,7 +9,7 @@ def create_teachers(apps, schema_editor):
     User.objects.create_user(username='ann',
                              email='ann@gmail.com',
                              password='ann@123',
-                             type='T')
+                             type='Teacher')
 
 
 class Migration(migrations.Migration):

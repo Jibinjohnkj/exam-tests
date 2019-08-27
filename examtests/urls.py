@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from multiplechoice.views import IndexView
 
 urlpatterns = [
+    path('', IndexView.as_view(), name='index'),
+    path('multiplechoice/', include('multiplechoice.urls')),
+    path('authentication/', include('authentication.urls')),
     path('admin/', admin.site.urls),
 ]

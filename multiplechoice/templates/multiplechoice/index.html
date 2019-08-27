@@ -1,0 +1,18 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'multiplechoice/index.css' %}">
+<script type="text/javascript" src="{% static 'multiplechoice/index.js' %}"></script>
+
+
+<div class="hot-container">
+	<p>
+        {% if user.type == 'Teacher' %}
+		    <a href="#" class="btn btn-blue">Create an Test</a>
+            <a href="#" class="btn btn-blue">View Results</a>
+        {% else %}
+            <a href="#" class="btn btn-blue">Take Test</a>
+        {% endif %}
+	</p>
+</div>
+
+
