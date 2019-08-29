@@ -5,11 +5,13 @@
 <div class="login-page">
   <div class="form">
     <form method="post" class="login-form">
+        {{ form.non_field_errors }}
         {% csrf_token %}
       <input type="text" placeholder="first name" name="first_name" maxlength="30" id="id_first_name"/>
       <input type="text" placeholder="surname" name="last_name" maxlength="150" id="id_last_name"/>
       <input type="text" placeholder="email address" name="email" maxlength="254" id="id_email"/>
       <input type="text" placeholder="choose your username" name="username" maxlength="150" required="" id="id_username"/>
+      {{ form.username.errors }}
       <input type="password" placeholder="password" name="password" maxlength="128" required="" id="id_password"/>
       <button>create</button>
       <p class="message">Already registered? <a href="/authentication/login/">Sign In</a></p>
