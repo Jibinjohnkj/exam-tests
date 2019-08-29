@@ -7,7 +7,7 @@ pip install pipenv
 
 git clone https://github.com/Jibinjohnkj/examtests.git
 
-cd examtests
+cd exam-tests-example
 
 pipenv install --ignore-pipfile
 
