@@ -3,16 +3,24 @@
 <link rel="stylesheet" type="text/css" href="{% static 'multiplechoice/index.css' %}">
 <script type="text/javascript" src="{% static 'multiplechoice/index.js' %}"></script>
 
-
+        <ul>
+            <li style="float:right"><a class="active" href="{% url 'logout' %}">Log out</a></li>
+        </ul>
 <div class="hot-container">
-	<p>
+
+
         {% if user.type == 'Teacher' %}
-		    <a href="#" class="btn btn-blue">Create an Test</a>
-            <a href="#" class="btn btn-blue">View Results</a>
+		    <a href="/admin/multiplechoice/question/" class="btn btn-blue">Create an Test</a>
+            <a href="/multiplechoice/exam/1/result/" class="btn btn-blue">View Results</a>
         {% else %}
-            <a href="#" class="btn btn-blue">Take Test</a>
+            <h2>Take Test</h2>
+            {% for exam in exams %}
+                <p>
+                    <a href="/multiplechoice/exam/{{ exam.id }}/question/{{ exam.question_set.first.id }}" class="btn btn-blue">{{ exam.title }}</a>
+                </p>
+            {% endfor %}
         {% endif %}
-	</p>
+
 </div>
 
 

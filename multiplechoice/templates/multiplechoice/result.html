@@ -1,0 +1,26 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'multiplechoice/result.css' %}">
+        <ul>
+            <li style="float:right"><a class="active" href="{% url 'logout' %}">Log out</a></li>
+        </ul>
+
+        <table id="students">
+          <tr>
+            <th>Name</th>
+            <th>Percentage</th>
+            <th>Pass</th>
+          </tr>
+          {% for result in results %}
+            <tr>
+                <td>{{ result.user.first_name }}&nbsp;{{ result.user.last_name}}</td>
+                <td>{{ result.percentage }}</td>
+                <td>{{ result.passed }}</td>
+            </tr>
+          {% endfor %}
+
+        </table>
+
+</div>
+
+

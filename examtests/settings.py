@@ -124,6 +124,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 AUTH_USER_MODEL = 'authentication.User'
 
-LOGIN_REDIRECT_URL = '/'
-
 LOGIN_URL = 'authentication/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

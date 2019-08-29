@@ -6,7 +6,10 @@ a { text-decoration: none; margin: 0 10px; }
 	margin-top: 100px;
 	width: 100%;
 	text-align: center;
+	align-items: center;
+
 }
+
 
 a.btn {
 	display: inline-block;
@@ -29,10 +32,41 @@ a.btn.btn-blue {
 	color: #FFF;
 }
 
-	a.btn.btn-blue:hover {
-		background-color: #1171a2;
-	}
+a.btn.btn-blue:hover {
+	background-color: #1171a2;
+}
 
-	a.btn.btn-blue:active {
-		background-color: #3C677B;
-	}
+a.btn.btn-blue:active {
+	background-color: #3C677B;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a.active:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #666;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}

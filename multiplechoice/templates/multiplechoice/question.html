@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'multiplechoice/question.css' %}">
+
+        <ul>
+            <li><a href="#home">{{ question.exam.title }}</a></li>
+            <li><a href="#news">{{ question.exam.date }}</a></li>
+        </ul>
+
+<div class="row">&nbsp;</div>
+<div class="row">
+<div class="col-sm-3">&nbsp;</div>
+<div class="col-sm-4">
+        <h3>{{ question.description }}</h3>
+        <form method="post">
+            {% csrf_token %}
+                {% for option in question.option_set.all %}
+                    <div class="checkbox">
+                    <input type="checkbox" name="selected-options" value="{{ option.id }}" class="styled"/>
+                        <label>
+                            {{option.description}}
+                        </label>
+                    </div>
+                {% endfor %}
+            <input type="submit" class="btn" value="Submit"/>
+        </form>
+</div>
+</div>
+

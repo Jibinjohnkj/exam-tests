@@ -35,13 +35,17 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='UserAnswers',
+            name='UserAnswer',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('updated_on', models.DateTimeField(auto_now=True)),
                 ('answer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='multiplechoice.Option')),
                 ('student', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
+        ),
+        migrations.AlterUniqueTogether(
+            name='useranswer',
+            unique_together={('student', 'answer')},
         ),
         migrations.CreateModel(
             name='Question',
